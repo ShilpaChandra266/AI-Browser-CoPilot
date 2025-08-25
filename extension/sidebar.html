@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Agentic Browser CoPilot</title>
+    <style>
+        body {
+          font-family: sans-serif;
+          margin: 0;
+          padding: 10px;
+          background: #f7f7f7;
+        }
+        #messages {
+          height: 250px;
+          overflow-y: auto;
+          border: 1px solid #ccc;
+          margin-bottom: 10px;
+          padding: 5px;
+          background: #fff;
+        }
+        #logs {
+          height: 150px;
+          overflow-y: auto;
+          background: #111;
+          color: #0f0;
+          padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<h2> AI Browser Copilot</h2>
+<div id="messages"></div>
+<input id="user-input" type="text" placeholder="Type a message..." style="width:80%">
+<button id="send-btn">Send</button>
+
+<h3>Logs</h3>
+<pre id="logs"></pre>
+
+<script src="sidebar.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "AI Browser CoPilot",
+  "description": "Chat with an agent that can summarize pages, navigate, and fill forms.",
+  "permissions": ["activeTab", "scripting", "tabs", "storage", "sidePanel"],
+  "version": "1.0",
+  "icons": {
+    "16": "icons/icon.png",
+    "32": "icons/icon.png",
+    "48": "icons/icon.png",
+    "128": "icons/icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "AI Browser Copilot",
+    "default_icon": {
+      "16": "icons/icon.png",
+      "32": "icons/icon.png",
+      "48": "icons/icon.png",
+      "128": "icons/icon.png"
+    },
+    "default_popup": "./popup/popup.html"
+  },
+  "side_panel": {
+    "default_path": "sidebar.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
