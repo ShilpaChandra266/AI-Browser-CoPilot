@@ -1,36 +1,11 @@
-//console.log("backgroudn.js loaded");
-//        chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
-//            if(request.action == "PROMPT"){
-//             const callDeepSeek = async (prompt, sendResponse) => {
-//                try {
-//                   const res = await fetch("http://localhost:3001/generate", {
-//                        method: "POST",
-//                        headers: { "Content-Type": "application/json" },
-//                        body: JSON.stringify({
-//                        model: "deepseek-r1:8b",
-//                        prompt: prompt
-//                        })
-//                    });
-//
-//
-//                         const data = await res.json();
-//
-//                                 console.log("LLM output text:", data.output);
-//
-//                                 sendResponse({ result: data });
-//                }
-//                catch(err) {
-//                    console.error("DeepSeek fetch error:", err);
-//                    sendResponse({ success: false, error: err.message });
-//                }
-//               };
-//                callDeepSeek(request.message, sendResponse);
-//                return true; // ✅ keep channel open for async
-//                }
-//            });
-// background.js
-chrome.runtime.onInstalled.addListener(() => {
-  console.log("Agentic Web Copilot installed");
+// Handle extension icon click - opens the sidebar
+chrome.action.onClicked.addListener(async (tab) => {
+  try {
+    // Open the side panel for the current window
+    await chrome.sidePanel.open({ windowId: tab.windowId });
+  } catch (error) {
+    console.error('Error opening sidebar:', error);
+  }
 });
 
 // background.js

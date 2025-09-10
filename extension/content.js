@@ -1,5 +1,4 @@
 // content.js
-
 // Extract readable text of the current page
 function getPageText() {
   try {
